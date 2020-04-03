@@ -274,6 +274,12 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
 
+# window navigation
+bind n next-window
+bind p previous-window
+unbind C-h
+unbind C-l
+
 # increase history size
 #set -g history-limit 10000
 
@@ -285,9 +291,11 @@ tmux_conf_copy_to_os_clipboard=false
 #set -g status-keys vi
 #set -g mode-keys vi
 
-# replace C-b by C-a instead of using both prefixes
-# set -gu prefix2
 # unbind C-a
+set -gu prefix2
+unbind C-a
+
+# replace C-b by C-a instead of using both prefixes
 # unbind C-b
 # set -g prefix C-a
 # bind C-a send-prefix
